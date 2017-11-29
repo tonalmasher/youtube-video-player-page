@@ -1,0 +1,358 @@
+/*
+  =====================================
+  General
+  =====================================
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #a0a0a0;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
+}
+
+.material-icons {
+    color: #a0a0a0;
+    cursor: pointer;
+  }
+
+.material-icons:hover { color: black; }
+
+.info-text {
+  font-size: 14px;
+  margin: 0;
+  padding: 0 20px 0 10px;
+}
+
+.publish-date {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+#views {
+  margin: 0;
+  padding-left: 0;
+}
+
+/*
+  =====================================
+  Navigation
+  =====================================
+*/
+
+.main-nav {
+  height: 48px;
+  width: 98%;
+  margin: auto;
+  padding: 8px 20px 0px 20px;
+  border-bottom: 1px solid rgba(150,150,150,0.1);
+  box-shadow: 0 2px  rgba(200,200,200,0.1);
+}
+
+.navbar * {
+  display: inline-block;
+  /*vertical-align: bottom;*/
+  padding: 0 12px;
+  }
+
+.nav-right {
+  float:right;
+}
+
+.info-nav * {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #a0a0a0;
+}
+
+.info-nav .material-icons {
+  width: 20px;
+  height: 20px;
+}
+
+.logo {
+  height: 20px;
+  width: auto;
+}
+
+.user-icon {
+  border-radius: 50%;
+  height: 32px;
+  width: auto;
+}
+
+/*
+  =====================================
+  Search form
+  =====================================
+*/
+
+.search-form {
+  margin-left: 40px;
+  position: relative;
+  width: 40%;
+}
+
+.search-form * {
+  display: inline-block;
+  vertical-align: bottom;
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  font-size: 14px;
+  padding: 6px 20px;
+  float: left;
+  width: 80%;
+
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  border-radius: 2px 0 0 2px;
+}
+
+.button {
+  text-align: center;
+  margin-left: -2px;
+  padding: 3px 10px 5px 10px;
+  height: 30px;
+  background-color: #f8f8f8;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 0 2px 2px 0;
+  opacity: 0.6;
+}
+
+
+/*
+  =====================================
+  Main Section made with CSS Grid
+  =====================================
+*/
+
+
+main {
+  clear: both;
+}
+
+.grid-container {
+  padding-top: 20px;
+  display: grid;
+  max-width: 90%;
+  margin:auto;
+  grid-gap: 0 1.5rem;
+  grid-template-rows: minmax(40px, auto);
+}
+
+@media only screen and (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: 3fr 400px;
+    grid-template-areas:
+                          "main side"
+                          "comments side";
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+                          "main"
+                          "side"
+                          "comments";
+  }
+}
+
+.main-video {
+  grid-area: main;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(180,180,180, 0.2);
+}
+
+.more-videos {
+  grid-area: side;
+}
+
+#first-more {
+
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(180,180,180, 0.2);
+}
+
+.comments {
+  grid-area: comments;
+}
+
+/* targets all the grid divs */
+.grid-container > div {
+  /*border: 1px dashed rgba(0,0,0,0.2);*/
+}
+
+/*
+  =====================================
+  Responsive YouTube embed
+  =====================================
+*/
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  =====================================
+  YouTube Owner sub-grid
+  =====================================
+*/
+
+.youtube-comment-grid,
+.youtube-sub-comment-grid {
+  display: grid;
+  grid-gap: 0 1.5rem;
+  grid-template-rows: minmax(20px, auto);
+  grid-template-columns: 64px 1fr;
+  grid-template-areas:
+                        "user-logo user-info";
+  padding-top: 10px;
+}
+
+.user-logo-div {
+  grid-area: user-logo;
+}
+
+.user-logo {
+  height: 48px;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.user-info-div {
+  grid-area: user-info;
+}
+
+.btn-subscribe {
+  float: right;
+  display: block;
+  /*vertical-align: top;*/
+  text-transform: uppercase;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-subscribe span {
+  color: rgba(250,200,200,1)
+}
+
+/*
+  =============================
+  Other Videos Grid
+  =============================
+*/
+
+.other-videos-grid {
+  display: grid;
+  grid-gap: 0 .5rem;
+  grid-template-rows: minmax(20px, auto);
+  grid-template-columns: 168px 1fr;
+  grid-template-areas:
+                        "video-image video-info";
+  padding-top: 10px;
+}
+
+.other-video {
+  grid-area: video-image;
+  width: 168px;
+  height: 94px;
+  overflow: hidden;
+}
+
+.other-video-info {
+  grid-area: video-info;
+}
+
+.other-video-info > h4 {
+  margin: 0;
+  padding-left: 0;
+}
+
+.other-video > img {
+  width: 168px;
+  height: auto;
+}
+
+
+/*
+  =============================
+  Comments styling
+  =============================
+*/
+
+.comment-sort-div {
+  padding-top: 18px;
+}
+
+.comment-sort-div * {
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 24px;
+}
+
+.comment-sort-div > h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.comment-likes * {
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 14px;
+  margin-right: 10px;
+}
+
+.comment-likes > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.comment-likes > .material-icons {
+  height: 12px;
+  width: 12px;
+  padding-right: 10px;
+}
